@@ -1,35 +1,42 @@
+## EX.NO-1
 
-EX.NO-1
-CREATING A PRIVATE DATE: BLOCKCHAIN
-AIM
+## CREATING A PRIVATE DATE: BLOCKCHAIN
+## AIM
+
 To create a Private Blockchain and to add nodes, create accounts, transfer Ether into it by creating
 and deploying Smart contract.
-PROCEDURE
+## PROCEDURE
 
-```
 1.Go to https //geth.ethereum.org/ and download the software for windows. While installing select
 both geth and development tools.
+
 2.To check whether the geth is installed ,run “geth” command in your command prompt.
+
 3.To create a Private Blockchain , we must create a genesis block.
+
 In your command prompt, create a directory go-ethereum.
 mkdir go-ethereum
 cd go-ethereum
+
 4.Create two nodes inside go-ethereum.
 mkdir node1
 mkdir node2
 5.Open vs code using “code .”
 To create account for two nodes
+
 6.Open terminal in vs code and change directory to node1.
 cd node1
 geth --datadir "./data" account new
 Save the public address and password of node1 in info.txt.
 3
+
 7.Repeat the same procedures for node2
 cd ..
 cd node2
 geth --datadir "./data" account new
 Save the public address and password of node2 in info.txt.
 To create a genesis block
+
 8.Create a file named “privateblock.json” inside go-ethereum.
  Replace {Chain id } with your own chain id and check whether it exists or not using https
 //chainlist.org/
@@ -37,9 +44,12 @@ To create a genesis block
  And second node with node2 address saved in info.txt
  Then replace balance as “3000000000000000000” for both nodes.
 To configure both nodes using genesis block
+
 9.change directory to node1 in terminal and run this command.
 geth --datadir ./data init ../privateblock.json
+
 10.Split terminal and cd to node2 and run the same.
+
 11. Again split terminal and create bootnode.
 mkdir bnode
 cd bnode
@@ -67,7 +77,8 @@ authrpc.port 8546 --networkid { NETWORK_ID } --unlock { ADDRESS_NODE2 } --passwo
 17.Click on file and under contract, create new file named “New.sol”
 18.Save the file and go to deploy tab and click deploy.
 19.Node1 has deployed and added to blockchain.
-5
+
+
 PROGRAM
 ```
 #Genesis file privateblock.json
@@ -113,11 +124,11 @@ return name;
 }
 }
 ```
-OUTPUT
+## OUTPUT
 # Deploying Transaction in Remix
 7
 # Contract Creation Output in Command Prompt
 <img width="1180" height="492" alt="image" src="https://github.com/user-attachments/assets/fc0eaa31-1340-4c3e-8410-3ca49a1f4dcd" />
 
-RESULT: Thus, the Private Blockchain is created, nodes are added with accounts, and Ether is transferred
+## RESULT: Thus, the Private Blockchain is created, nodes are added with accounts, and Ether is transferred
 into it by creating and deploying Smart contract successfully
