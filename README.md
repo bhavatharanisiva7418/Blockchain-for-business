@@ -53,12 +53,15 @@ geth --datadir ./data init ../privateblock.json
 11. Again split terminal and create bootnode.
 mkdir bnode
 cd bnode
-12. To generate key
+
+12.c node 
+
+13. To generate key
 bootnode -genkey boot.key
 bootnode -nodekey boot.key verbosity 7 -addr "127.0.0.1 30301"
-4
-13. save the enode value in info.txt.
-14.Run node1 and node2
+
+14. save the enode value in info.txt.
+Run node1 and node2
 To start node1 > geth --datadir "./data" --port 30304 --bootnodes enode //{ YOUR_VALUE } --
 authrpc.port 8547 --ipcdisable --allow-insecure-unlock --http --http.corsdomain="https
 //remix.ethereum.org" --http.api web3,eth,debug,personal,net --networkid { NETWORK_ID } --
@@ -72,16 +75,23 @@ authrpc.port 8546 --networkid { NETWORK_ID } --unlock { ADDRESS_NODE2 } --passwo
  {Network id} is your chain id given in privateblock.json.
  Create password.txt undernode1 and node2 and enter the password in it.
  Replace password.txt with { PASSWORD_FILE_NAME_EXTENSION }.
+
 15.Go to https //remix.ethereum.org/ and in left pane click deploy and run transactions icon.
+
 16.Change the environment to Custom-External HTTP Provider
+
 17.Click on file and under contract, create new file named “New.sol”
+
 18.Save the file and go to deploy tab and click deploy.
+
 19.Node1 has deployed and added to blockchain.
 
 
-PROGRAM
+## PROGRAM
+
+
+# Genesis file privateblock.json
 ```
-#Genesis file privateblock.json
 {
 "config" {
 "chainId" 878787,
@@ -111,7 +121,9 @@ PROGRAM
 }
 }
 6
-#Smart Contract New.sol
+```
+# Smart Contract New.sol
+```
 //SPDX-License-Identifier MIT
 pragma solidity ^0.8.19;
 contract New{
@@ -124,11 +136,17 @@ return name;
 }
 }
 ```
-## OUTPUT
-# Deploying Transaction in Remix
-7
-# Contract Creation Output in Command Prompt
-<img width="1180" height="492" alt="image" src="https://github.com/user-attachments/assets/fc0eaa31-1340-4c3e-8410-3ca49a1f4dcd" />
 
-## RESULT: Thus, the Private Blockchain is created, nodes are added with accounts, and Ether is transferred
+## OUTPUT
+
+
+# Deploying Transaction in Remix
+
+
+<img width="1916" height="968" alt="Screenshot 2026-03-12 082543" src="https://github.com/user-attachments/assets/9a1f2286-8bdf-49e6-b3c4-a29f8d3e562f" />
+
+
+## RESULT
+
+Thus, the Private Blockchain is created, nodes are added with accounts, and Ether is transferred
 into it by creating and deploying Smart contract successfully
